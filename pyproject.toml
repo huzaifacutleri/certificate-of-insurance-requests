@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coi"
+version = "0.1.0"
+description = "Certificate-of-insurance request automation for independent insurance agencies"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.5",    # domain models + validation of LLM output
+    "reportlab>=4.0",   # certificate PDF generation
+]
+
+[project.optional-dependencies]
+# Web API (thin wrapper around the core pipeline).
+api = ["fastapi>=0.110", "uvicorn>=0.29"]
+# LLM-backed request extraction. The core runs without it (rule-based extractor).
+llm = ["anthropic>=0.40"]
+dev = ["pytest>=8", "ruff>=0.5", "pypdf>=4", "httpx>=0.27"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+# `ruff format` owns code layout; long SQL and prose strings are fine.
+ignore = ["E501"]
+
+[tool.ruff.lint.flake8-bugbear]
+# FastAPI's dependency-injection idiom puts Depends()/Header() in argument defaults.
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Header"]

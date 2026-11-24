@@ -1,0 +1,41 @@
+[
+  {
+    "id": "summit-roofing",
+    "name": "Summit Roofing LLC",
+    "address": "410 Ridge Rd, Springfield, IL 62701",
+    "coverages": [
+      {"type": "general_liability", "carrier": "Harbor Mutual", "policy_number": "GL-100234",
+       "effective": "2026-01-01", "expiration": "2027-01-01",
+       "limits": {"each_occurrence": 1000000, "general_aggregate": 2000000},
+       "endorsements": ["additional_insured", "waiver_of_subrogation", "primary_noncontributory"]},
+      {"type": "auto_liability", "carrier": "Harbor Mutual", "policy_number": "CA-778120",
+       "effective": "2026-01-01", "expiration": "2027-01-01",
+       "limits": {"combined_single_limit": 1000000}},
+      {"type": "workers_comp", "carrier": "Keystone Casualty", "policy_number": "WC-55781",
+       "effective": "2025-12-10", "expiration": "2026-12-10",
+       "limits": {"each_accident": 1000000}}
+    ]
+  },
+  {
+    "id": "pine-ridge-electric",
+    "name": "Pine Ridge Electric Inc.",
+    "address": "88 Orchard Ln, Madison, WI 53703",
+    "coverages": [
+      {"type": "general_liability", "carrier": "Northern Shield", "policy_number": "GL-20551",
+       "effective": "2026-07-01", "expiration": "2027-07-01",
+       "limits": {"each_occurrence": 1000000, "general_aggregate": 2000000},
+       "endorsements": ["additional_insured"]}
+    ]
+  },
+  {
+    "id": "granite-state-plumbing",
+    "name": "Granite State Plumbing Co.",
+    "address": "7 Mill St, Concord, NH 03301",
+    "coverages": [
+      {"type": "general_liability", "carrier": "Northern Shield", "policy_number": "GL-90417",
+       "effective": "2025-09-30", "expiration": "2026-09-30",
+       "limits": {"each_occurrence": 1000000, "general_aggregate": 2000000},
+       "endorsements": ["additional_insured"]}
+    ]
+  }
+]
